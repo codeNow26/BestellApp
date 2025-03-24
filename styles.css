@@ -1,0 +1,23 @@
+
+body{
+    margin:0;
+}
+
+header{
+    background-color: orange;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    width: 150px;
+    height: 60px;
+    padding-left: 20px;
+}
+
+.main-img {
+    width: 1920px;
+    height: 200px;
+    object-fit: cover;
+}
