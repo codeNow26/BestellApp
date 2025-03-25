@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,61 @@
     <script src="./script.js"></script>
     <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body onload='hallo()'>
-<header>
-    <img class="main-logo" src="./Material/Logo/Logo.png">
-</header>
-<img class="main-img" src="./Material/img/pexels-christel-heimdal-jensen-628776.jpg">
+    <header>
+        <img class="main-logo" src="./Material/Logo/Logo.png">
+    </header>
+    <img class="main-img" src="./Material/img/pexels-christel-heimdal-jensen-628776.jpg">
+    <main>
+        <div class="shopping-cart" id="cart">
+            <h2 class="shopping-cart-headline">Warenkorb</h2>
+            <button onclick='removeShoppingCart()'>bitte wegmachen</button>
+        </div>
+        </div>
+        <h2>Paradise Noodles</h2>
+        <p class="orange-text">Bewertung (4,2 von 5 Sternen)</p>
+        <div class="menu-options">
+            <img class="right-arrow-icon" src="./Material/icons/right-arrow-icon-7585.png">
+            <p>Hauptgerichte</p>
+            <p>Beilage</p>
+        </div>
+        <img class="main-dishes-img"
+            src="./Material/img/foodiesfeed.com_colorful-bowl-of-deliciousness-with-fried-egg.png">
+        <h2>Hauptgerichte</h2>
+        <div class="dish-container">
+            <h3>Pizza Krabben</h3>
+            <p>mit Krabben und Peperoni</p>
+            <p class="orange-text">9,50€</p>
+            <div onclick='cartMenu()' class="orange-plus-container">
+                <img class="orange-plus-sign" src="./Material/icons/orange-plus-sign-hi.png">
+                </div>
+                </div>
+                <div class="dish-container">
+                    <h3>Pizza Magherita</h3>
+                    <p>mit Mozzarella</p>
+                    <p class="orange-text">5,90€</p>
+                    <div onclick='cartMenu()' class="orange-plus-container">
+                        <img class="orange-plus-sign" src="./Material/icons/orange-plus-sign-hi.png">
+                        </div>
+                </div>
+                <div class="dish-container">
+                    <h3>Pizza Diavolo (scharf)</h3>
+                    <p>mit Salami, Zwiebeln, Peperoni und Knoblauch</p>
+                    <p class="orange-text">8,50€</p>
+                    <div onclick='cartMenu()' class="orange-plus-container">
+                        <img class="orange-plus-sign" src="./Material/icons/orange-plus-sign-hi.png">
+                        </div>
+                </div>
+                <div class="dish-container">
+                    <h3>Pizzabrötchen</h3>
+                    <p>mit Käse und Knoblauch</p>
+                    <p class="orange-text">12,90€</p>
+                    <div onclick='cartMenu()' class="orange-plus-container">
+                        <img class="orange-plus-sign" src="./Material/icons/orange-plus-sign-hi.png">
+                        </div>
+                </div>
+    </main>
 </body>
+
 </html>
