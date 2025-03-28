@@ -1,12 +1,26 @@
-function cartMenu() {
-     document.getElementById('cart').style.display = "block";
-    }
+function addToCart() {
+    let contentRef = document.getElementById('cart');
+    contentRef.innerHTML += `<div class="hallo"> 
+    <h3 class="cart-dish-title">
+    ${myDishes.name}
+    </h3> 
+    <p>
+    ${myDishes.description}
+    </p> 
+    <p class="orange-text">
+    ${myDishes.price + "0€"}
+    </p>
+    </div>
+    `
+}
 
-    function removeShoppingCart() {
-        let a = document.getElementById("cart");
-        if (a.style.display === "none") {
-          a.style.display = "block";
-        } else {
-          a.style.display = "none";
-        }
-      } 
+function addPrice() {
+
+}
+
+
+
+
+function addToTrash() {
+
+}
