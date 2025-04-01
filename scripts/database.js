@@ -1,20 +1,21 @@
 let myDishes = [
     {
         "name": "Spaghetti Carbonara",
-        "description": "mit Schinken und Käse",
         "price": 12.90,
+        "description": "mit Schinken und Käse"
     },
     {
-        "name": "sprudel",
-        "description": "Wasser",
+        "name": "Spaghetti Bolognese",
         "price": 13.90,
-    }
+        "description": "Wasser"
+    },
+    {
+      "name": "I hobs",
+      "price": 2000.23,
+      "description": "YESSSSS"
+  }
 ]
 
-console.log(myDishes.filter((element) => {return element['name'] == "sprudel"})
-);
+ let dishy = myDishes.filter((element) => { return element['name'] == "Spaghetti Carbonara" });
 
-// am ende muss es true oder falls sein was beim return rauskommt
-
-// return kann man beliebig erweitern
-// beinhaltet der string von dem Namen etwas was ich zum beispiel in ein suchfeld eingegeben habe? als beispiel   
+ console.log(Object.values(myDishes[0]));

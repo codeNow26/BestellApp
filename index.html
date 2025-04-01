@@ -35,7 +35,7 @@
                     <h3>Pizza Krabben</h3>
                     <p>mit Krabben und Peperoni</p>
                     <p class="orange-text">9,50€</p>
-                    <div onclick='addToCart()' class="orange-plus-container">
+                    <div onclick='addDishToCart(0)' class="orange-plus-container">
                         <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     <h3>Pizza Magherita</h3>
                     <p>mit Mozzarella</p>
                     <p class="orange-text">5,90€</p>
-                    <div onclick='addToCart()' class="orange-plus-container">
+                    <div onclick='addDishToCart(1)' class="orange-plus-container">
                         <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <h3>Pizza Diavolo (scharf)</h3>
                     <p>mit Salami, Zwiebeln, Peperoni und Knoblauch</p>
                     <p class="orange-text">8,50€</p>
-                    <div onclick='addToCart()' class="orange-plus-container">
+                    <div onclick='addDishToCart(2)' class="orange-plus-container">
                         <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
                     </div>
                 </div>
@@ -59,13 +59,14 @@
                     <h3>Pizzabrötchen</h3>
                     <p>mit Käse und Knoblauch</p>
                     <p class="orange-text">12,90€</p>
-                    <div onclick='addToCart(cart)' class="orange-plus-container">
+                    <div onclick='addToCart(2)' class="orange-plus-container">
                         <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
                     </div>
                 </div>
             </section>
             <section class="shopping-cart">
                 <div class="basket" id="cart">
+                 <img class="shopping-basket-img" src="./assets/icons/shopping-basket.png">
                     <h2 class="shopping-cart-headline">Warenkorb</h2>
                 </div>
             </section>

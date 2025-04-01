@@ -1,17 +1,12 @@
-function addToCart() {
+
+
+function addDishToCart(i) {
     let contentRef = document.getElementById('cart');
-    contentRef.innerHTML += `<div class="hallo"> 
-    <h3 class="cart-dish-title">
-    ${myDishes.name}
-    </h3> 
-    <p>
-    ${myDishes.description}
-    </p> 
-    <p class="orange-text">
-    ${myDishes.price + "0€"}
-    </p>
-    </div>
+    contentRef.innerHTML += 
     `
+    <h3 class="cart-dish-title">${Object.values(myDishes[i].name).join("")}</h3>
+     <p>${myDishes[i].price}0€</p>
+     `
 }
 
 function addPrice() {
@@ -24,3 +19,8 @@ function addPrice() {
 function addToTrash() {
 
 }
+
+
+
+
+// img to display and none als nächstes
