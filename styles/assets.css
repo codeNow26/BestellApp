@@ -34,3 +34,19 @@
     height: 100px;
     object-fit: cover;
 }
+
+.change-amount-btn{
+width: 20px;
+height: 20px;
+}
+
+.change-amount-btn:hover{
+width: 23px;
+height: 23px;
+}
+
+.order-item{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+}

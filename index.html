@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/assets.css">
 </head>
 
-<body>
+<body onload=" addDishToCart(0)">
     <header>
         <img class="main-logo" src="./assets/Logo/Logo.png">
     </header>
@@ -35,7 +35,7 @@
                     <h3>Pizza Krabben</h3>
                     <p>mit Krabben und Peperoni</p>
                     <p class="orange-text">9,50€</p>
-                    <div onclick='addDishToCart(0)' class="orange-plus-container">
+                    <div  onclick='addDishToCart(0)' class="orange-plus-container">
                         <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
                     </div>
                 </div>
@@ -59,13 +59,14 @@
                     <h3>Pizzabrötchen</h3>
                     <p>mit Käse und Knoblauch</p>
                     <p class="orange-text">12,90€</p>
-                    <div onclick='addToCart(2)' class="orange-plus-container">
+                    <div onclick='addDishToCart(3)' class="orange-plus-container">
                         <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
                     </div>
                 </div>
             </section>
             <section class="shopping-cart">
                 <div class="basket" id="cart">
+
                  <img class="shopping-basket-img" src="./assets/icons/shopping-basket.png">
                     <h2 class="shopping-cart-headline">Warenkorb</h2>
                 </div>
@@ -76,3 +77,7 @@
 </body>
 
 </html>
+
+
+
+
