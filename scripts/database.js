@@ -12,27 +12,27 @@ let myDishes = [
         "description": "Wasser"
     },
     {
-      "name": "I hobs",
-      "price": 2000.23,
-      "amount": 1,
-      "description": "YESSSSS"
-  }
+        "name": "I hobs",
+        "price": 2000.23,
+        "amount": 1,
+        "description": "YESSSSS"
+    }
 ]
 
-function changeAmount(i) {
-    change = myDishes[i].amount;
-    if (change === 0) {
-        return;
+function changeAmount(i, operation) {
+    let element = document.getElementById(`amount-counter-${i}`);
+    let cart = document.getElementById("cart-wrapper");
+    let amount = parseInt(element.innerText);
+    if (operation == 'plus') {
+        element.innerText = amount + 1;
     }
-    else {
-        for (let i = 1; i < 99; i++) {
-            const element = myDishes[i];
-            
-        }
-    }
-    return change;
 
+    if (operation == 'minus') {
+        element.innerText = amount - 1;
+    }
+    if (operation == "minus") {
+       cart.style.display = "none"
+    }
 }
 
-console.log(changeAmount(1))
-
+// das gericht löschen wenn 0, mit display none ist geglücckt nur opoeration = minus ist falsch also korrigiere!
