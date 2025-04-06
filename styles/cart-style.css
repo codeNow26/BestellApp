@@ -47,3 +47,7 @@
     height: 50px;
     padding-top: 20px;
 }
+
+.cart-wrapper {
+    display: none;
+}

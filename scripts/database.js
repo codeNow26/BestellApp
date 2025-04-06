@@ -12,7 +12,7 @@ let myDishes = [
         "description": "Wasser"
     },
     {
-        "name": "I hobs",
+        "name": "Spaghetti alio",
         "price": 2000.23,
         "amount": 1,
         "description": "YESSSSS"
@@ -21,18 +21,22 @@ let myDishes = [
 
 function changeAmount(i, operation) {
     let element = document.getElementById(`amount-counter-${i}`);
-    let cart = document.getElementById("cart-wrapper");
+    let cart = document.getElementById(`cart-wrapper-${i}`);
     let amount = parseInt(element.innerText);
     if (operation == 'plus') {
         element.innerText = amount + 1;
     }
 
     if (operation == 'minus') {
+        if (amount === 1) {
+            cart.style.display = "none";
+            return;
+        }
         element.innerText = amount - 1;
-    }
-    if (operation == "minus") {
-       cart.style.display = "none"
     }
 }
 
-// das gericht löschen wenn 0, mit display none ist geglücckt nur opoeration = minus ist falsch also korrigiere!
+function addPriceToTotal(i) {
+ let price = document.getElementById(`price-counter-${i}`)
+ return price * 2;
+}
