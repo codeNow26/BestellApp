@@ -1,13 +1,3 @@
-.orange-plus-sign {
-    width: 30px;
-    border: 2px solid;
-    border-color: rgb(148, 148, 148, 0.1);
-    padding:6px;
-    position: absolute;
-    bottom: 88px;
-    right: -1px;
-}
-
 .orange-plus-container {
     position: relative;
 }
@@ -23,30 +13,67 @@
 }
 
 .main-img {
-    width: 1500px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
     margin: -12px;
 }
 
-.main-dishes-img {
-    width: 100%;
+.dishes-banner {
     height: 100px;
+    width: 100%;
     object-fit: cover;
 }
 
-.change-amount-btn{
-width: 20px;
-height: 20px;
+.change-amount-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
-.change-amount-btn:hover{
-width: 23px;
-height: 23px;
+.change-amount-btn:hover {
+    width: 23px;
+    height: 23px;
 }
 
-.order-item{
-    display:flex;
+.order-item {
+    display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.trash-bin {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.trash-bin:hover {
+    background-color: rgb(148, 148, 148, 0.4);
+    border-radius: 18px;
+    transition: all .4s ease;
+}
+
+.sub-logo {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+}
+
+.sub-logo-wrapper img {
+    width: 200px;
+}
+
+.footer-logo {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 53px;
+    transform: translate(-50%, -50%);
+}
+
+footer {
+    position: relative;
 }

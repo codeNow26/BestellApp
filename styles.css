@@ -1,9 +1,7 @@
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+html {
+    scroll-behavior: smooth;
 }
+
 
 header {
     background-color: orange;
@@ -23,27 +21,255 @@ header {
     height: 40px;
     background-color: rgb(148, 148, 148, 0.1);
     margin-bottom: 20px;
-    width: 1500px;
-    
+    width: 110%;
+}
+
+.menu-options a {
+    text-decoration: none;
+    color: black;
+}
+
+.orange-plus-sign {
+    width: 30px;
+    border: 2px solid;
+    border-color: rgb(148, 148, 148, 0.1);
+    padding: 6px;
+    position: absolute;
+    bottom: 105px;
+    right: -1px;
+}
+
+.orange-plus-sign:hover {
+    background-color: rgb(247, 196, 102, 0.4);
+    cursor: pointer;
 }
 
 .dish-container {
-    margin-bottom:20px;
-    width: 100%;
+    margin-bottom: 20px;
     height: 130px;
     border: 2px solid;
     border-color: rgb(148, 148, 148, 0.1);
 }
 
-.content-wrapper{
+.dish-container:hover {
+    background-color: rgb(247, 196, 102, 0.4);
+}
+
+
+.content-wrapper {
     display: flex;
     flex-direction: row;
     gap: 5px;
     padding: 2px;
-    flex-grow:1;
+    flex-grow: 1;
 }
 
 .menu_wrapper {
     width: calc(100% - 300px);
     padding: 10px;
+}
+
+footer {
+    height: 100px;
+    background-color: orange;
+}
+
+.footer-socials img {
+    width: 40px;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-branding {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 350px;
+}
+
+.leftandright {
+    display: flex;
+    justify-content: space-around;
+}
+
+#order-button-text {
+    display: none;
+    font-size: 18px;
+    text-align: center;
+}
+
+.main-img-wrapper {
+    position: relative;
+    padding-top: 0px;
+    margin-right: -24px;
+}
+
+.responsive-basket-btn {
+    position: sticky;
+    bottom: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(57, 131, 250);
+    border: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: none;
+}
+
+@media (max-width: 900px) {
+    h2 {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .sub-logo {
+        top: 143px !important;
+    }
+
+    .sub-logo-wrapper img {
+        width: 100px !important;
+    }
+
+    .orange-plus-sign {
+        width: 20px;
+        padding: 4px;
+        bottom: 90px;
+        right: -1px;
+    }
+
+    .total {
+        font-size: 16px !important;
+        margin-bottom: 40px;
+        margin-top: 10px;
+    }
+
+    .order-btn {
+        font-size: 22px;
+        width: 250px;
+        height: 60px;
+    }
+
+    .main-img {
+        height: 150px !important;
+        padding-bottom: 50px;
+    }
+
+    .dishes-banner {
+        height: 80px;
+    }
+
+    .orange-text {
+        padding-top: 10px;
+    }
+
+    .footer-socials {
+        padding-right: 40px;
+    }
+
+    .footer-branding {
+        width: 200px;
+        padding-right: 100px;
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 680px) {
+    .shopping-cart {
+        position: fixed;
+        display: none;
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .basket {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 800px;
+        position: sticky;
+        top: 0;
+        text-align: left;
+        padding-left: 20px;
+        overflow-y: scroll;
+    }
+
+    .menu_wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .responsive-basket-btn {
+        display: block;
+    }
+
+    .footer-socials {
+        padding-right: 30px;
+    }
+
+    .leftandright {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer-branding {
+        width: 100px;
+        padding-right: 100px;
+        padding-left: 30px;
+    }
+
+    .footer-logo {
+        width: 80px !important;
+        position: absolute;
+        left: 50%;
+        top: 53px;
+        transform: translate(-50%, -50%);
+    }
+
+    .footer-socials img {
+        width: 30px;
+    }
+
+    .menu-options {
+        width:100%;
+    }
+
+    .main-img-wrapper {
+        width: 100%;
+        margin:0;
+    }
+
+    .main-img {
+        width: 100%;
+        object-fit: cover;
+        margin: 0px;
+    }
+
+    .menu_wrapper {
+        width: 100%;
+        padding:0;
+        padding-top: 12px;
+    }
+
+    .content-wrapper {
+        gap: 5px;
+        padding: 0px;
+    }
 }
