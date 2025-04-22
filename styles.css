@@ -1,13 +1,43 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
 
 header {
+    width: 100%;
     background-color: orange;
     height: 80px;
     display: flex;
     align-items: center;
+
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+main {
+    flex: 1;
+
 }
 
 .orange-text {
@@ -27,6 +57,10 @@ header {
 .menu-options a {
     text-decoration: none;
     color: black;
+}
+
+.menu-options a:hover {
+    text-decoration: underline;
 }
 
 .orange-plus-sign {
@@ -55,13 +89,14 @@ header {
     background-color: rgb(247, 196, 102, 0.4);
 }
 
-
 .content-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 5px;
     padding: 2px;
-    flex-grow: 1;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .menu_wrapper {
@@ -93,9 +128,12 @@ footer {
     padding-right: 350px;
 }
 
-.leftandright {
+.footer-wrapper {
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 #order-button-text {
@@ -199,6 +237,7 @@ footer {
         cursor: pointer;
     }
 
+
     .basket {
         display: flex;
         flex-direction: column;
@@ -213,7 +252,8 @@ footer {
 
     .menu_wrapper {
         width: 100%;
-        padding: 10px;
+        padding: 10px 0px 10px 10px;
+        display: block;
     }
 
     .responsive-basket-btn {
@@ -248,28 +288,32 @@ footer {
     }
 
     .menu-options {
-        width:100%;
+        width: 100%;
     }
 
     .main-img-wrapper {
-        width: 100%;
-        margin:0;
+        margin-right: 0px !important;
+        margin-left: -10px;
+        padding: -12px !important;
     }
 
     .main-img {
         width: 100%;
-        object-fit: cover;
-        margin: 0px;
-    }
+        padding-top: 2px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
 
-    .menu_wrapper {
-        width: 100%;
-        padding:0;
-        padding-top: 12px;
     }
-
     .content-wrapper {
         gap: 5px;
         padding: 0px;
+    }
+}
+
+@media (min-width: 681px) {
+    .shopping-cart {
+        display: block !important;
     }
 }

@@ -10,6 +10,7 @@
     width: 150px;
     height: 60px;
     padding-left: 20px;
+    cursor: pointer;
 }
 
 .main-img {
@@ -72,6 +73,7 @@
     left: 50%;
     top: 53px;
     transform: translate(-50%, -50%);
+    padding-left: 10px;
 }
 
 footer {

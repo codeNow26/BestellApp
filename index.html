@@ -1,145 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <title>Bestell-App</title>
+    <link rel="icon" type="image/x-icon" href="./assets/Logo/Bap&Gogi remove background.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./script.js"></script>
     <script src="./scripts/database.js"></script>
+    <script src="./scripts/template.js"></script>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/cart-style.css">
     <link rel="stylesheet" href="styles/assets.css">
 </head>
-
 <body>
-    <header>
-        <img class="main-logo" src="./assets/Logo/Logo.png">
-    </header>
-    <main>
-        <div class="content-wrapper">
-            <section id="menu-wrapper" class="menu_wrapper">
-                <div class="main-img-wrapper">
-                    <div class="sub-logo-wrapper">
-                        <img class="sub-logo" src="./assets/Logo/Bap&Gogi remove background.png">
-                    </div>
-                    <img class="main-img" src="./assets/img/pexels-christel-heimdal-jensen-628776.jpg">
-                </div>
-                <h2>Bap & Gogi</h2>
-                <p class="orange-text">Bewertung (4,2 von 5 Sternen)</p>
-                <div class="menu-options">
-                    <img class="right-arrow-icon" src="./assets/icons/right-arrow-icon-7585.png">
-                    <a href="#Hauptgerichte">Hauptgerichte</a>
-                    <a href="#Snacks">Snacks</a>
-                    <a href="#Beilagen">Beilage</a>
-                </div>
-                <img class="dishes-banner"
-                    src="./assets/img/foodiesfeed.com_colorful-bowl-of-deliciousness-with-fried-egg.png">
-                <h2 id="Hauptgerichte">Hauptgerichte</h2>
-                <div onclick="DishClick(0)" class="dish-container">
-                    <h3>Bibimbap</h3>
-                    <p>Reis mit Gemüse, Ei, Fleisch, scharfer Sauce</p>
-                    <p class="orange-text">12,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <div onclick="DishClick(1)" class="dish-container">
-                    <h3>Dakgalbi</h3>
-                    <p>Würziges gebratenes Hähnchen mit Gemüse</p>
-                    <p class="orange-text">13,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <div onclick="DishClick(2)" class="dish-container">
-                    <h3>Bulgogi</h3>
-                    <p>Mariniertes, gegrilltes Rindfleisch</p>
-                    <p class="orange-text">14,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <h2 id="Snacks">Snacks</h2>
-                <img class="dishes-banner" src="assets/img/Reiskuchen.png">
-                <div onclick="DishClick(3)" class="dish-container">
-                    <h3>Tteokbokki</h3>
-                    <p>Scharfe Reiskuchen in Chilisauce</p>
-                    <p class="orange-text">4,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <div onclick="DishClick(4)" class="dish-container">
-                    <h3>Mandu</h3>
-                    <p>Koreanische Teigtaschen</p>
-                    <p class="orange-text">12,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <div onclick="DishClick(5)" class="dish-container">
-                    <h3>Eomuk</h3>
-                    <p>Fischkuchen-Spieße in warmer Brühe</p>
-                    <p class="orange-text">5,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <h2 id="Beilagen">Beilagen</h2>
-                <img class="dishes-banner" src="./assets/img/Kimchi.png">
-                <div onclick="DishClick(6)" class="dish-container">
-                    <h3>Kimchi</h3>
-                    <p>Fermentierter Kohl oder Rettich, scharf</p>
-                    <p class="orange-text">3,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <div onclick="DishClick(7)" class="dish-container">
-                    <h3>Oi Muchim</h3>
-                    <p>Würziger Gurkensalat</p>
-                    <p class="orange-text">3,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-                <div onclick="DishClick(8)" class="dish-container">
-                    <h3>Gamja Jorim</h3>
-                    <p>In Sojasauce geschmorte Kartoffeln</p>
-                    <p class="orange-text">4,90€</p>
-                    <div class="orange-plus-container">
-                        <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
-                    </div>
-                </div>
-            </section>
-            <section id="shopping-cart" class="shopping-cart">
-                <div class="basket" id="cart">
-                    <img class="shopping-basket-img" src="./assets/icons/shopping-basket.png">
-                    <h2 class="shopping-cart-headline">Warenkorb</h2>
-                    <div>
-                        <div id="order-button"></div>
-                        <div id="order-button-text">Ihre Testbestellung wurde ausgeführt!</div>
-                    </div>
-                    <div class="total" id="total"></div>
-            </section>
-        </div>
-        <button onclick="showOverlay()" class="responsive-basket-btn">Warenkorb</button>
-        <div id="overlay"></div>
-    </main>
-    <footer>
-        <div class="leftandright">
-            <div class="footer-branding">
-                <p>Bap & Gogi – Authentisches koreanisches Essen</p>
+    <div class="wrapper">
+        <header>
+            <div class="header-content">
+                <img class="main-logo" src="./assets/Logo/Logo.png" onclick="reloadPage()">
             </div>
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/"><img src="./assets/icons/instagrram_logo.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/"><img src="./assets/icons/facebook_logo.png" alt="Facebook"></a>
+        </header>
+        <main>
+            <div class="content-wrapper">
+                <section id="menu-wrapper" class="menu_wrapper">
+                    <div class="main-img-wrapper">
+                        <div class="sub-logo-wrapper">
+                            <img class="sub-logo" src="./assets/Logo/Bap&Gogi remove background.png">
+                        </div>
+                        <img class="main-img" src="./assets/img/pexels-christel-heimdal-jensen-628776.jpg">
+                    </div>
+                    <h2>Bap & Gogi</h2>
+                    <p class="orange-text">Bewertung (4,2 von 5 Sternen)</p>
+                    <div class="menu-options">
+                        <img class="right-arrow-icon" src="./assets/icons/right-arrow-icon-7585.png">
+                        <a href="#Hauptgerichte">Hauptgerichte</a>
+                        <a href="#Snacks">Snacks</a>
+                        <a href="#Beilagen">Beilagen</a>
+                    </div>
+                    <img class="dishes-banner"
+                        src="./assets/img/foodiesfeed.com_colorful-bowl-of-deliciousness-with-fried-egg.png">
+                    <h2 id="Hauptgerichte">Hauptgerichte</h2>
+                    <div onclick="dishClick(0)" class="dish-container">
+                        <h3>Bibimbap</h3>
+                        <p>Reis mit Gemüse, Ei, Fleisch, scharfer Sauce</p>
+                        <p class="orange-text">12,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <div onclick="dishClick(1)" class="dish-container">
+                        <h3>Dakgalbi</h3>
+                        <p>Würziges gebratenes Hähnchen mit Gemüse</p>
+                        <p class="orange-text">13,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <div onclick="dishClick(2)" class="dish-container">
+                        <h3>Bulgogi</h3>
+                        <p>Mariniertes, gegrilltes Rindfleisch</p>
+                        <p class="orange-text">14,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <h2 id="Snacks">Snacks</h2>
+                    <img class="dishes-banner" src="assets/img/Reiskuchen.png">
+                    <div onclick="dishClick(3)" class="dish-container">
+                        <h3>Tteokbokki</h3>
+                        <p>Scharfe Reiskuchen in Chilisauce</p>
+                        <p class="orange-text">4,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <div onclick="dishClick(4)" class="dish-container">
+                        <h3>Mandu</h3>
+                        <p>Koreanische Teigtaschen</p>
+                        <p class="orange-text">12,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <div onclick="dishClick(5)" class="dish-container">
+                        <h3>Eomuk</h3>
+                        <p>Fischkuchen-Spieße in warmer Brühe</p>
+                        <p class="orange-text">5,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <h2 id="Beilagen">Beilagen</h2>
+                    <img class="dishes-banner" src="./assets/img/Kimchi.png">
+                    <div onclick="dishClick(6)" class="dish-container">
+                        <h3>Kimchi</h3>
+                        <p>Fermentierter Kohl oder Rettich, scharf</p>
+                        <p class="orange-text">3,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <div onclick="dishClick(7)" class="dish-container">
+                        <h3>Oi Muchim</h3>
+                        <p>Würziger Gurkensalat</p>
+                        <p class="orange-text">3,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                    <div onclick="dishClick(8)" class="dish-container">
+                        <h3>Gamja Jorim</h3>
+                        <p>In Sojasauce geschmorte Kartoffeln</p>
+                        <p class="orange-text">4,90€</p>
+                        <div class="orange-plus-container">
+                            <img class="orange-plus-sign" src="./assets/icons/orange-plus-sign-hi.png">
+                        </div>
+                    </div>
+                </section>
+                <section id="shopping-cart" class="shopping-cart">
+                    <div class="basket" id="cart">
+                        <img class="shopping-basket-img" src="./assets/icons/shopping-basket.png">
+                        <h2 class="shopping-cart-headline">Warenkorb</h2>
+                        <div>
+                            <div id="order-button"></div>
+                            <div id="order-button-text">Ihre Testbestellung wurde ausgeführt!</div>
+                        </div>
+                        <div class="total" id="total"></div>
+                </section>
             </div>
-        </div>
-        <img class="footer-logo" src="./assets/Logo/Bap&Gogi remove background.png">
-    </footer>
+            <button onclick="showOverlay()" class="responsive-basket-btn">Warenkorb</button>
+            <div id="overlay"></div>
+        </main>
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-branding">
+                    <p>Bap & Gogi – Authentisches koreanisches Essen</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/"><img src="./assets/icons/instagrram_logo.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.facebook.com/"><img src="./assets/icons/facebook_logo.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <img class="footer-logo" src="./assets/Logo/Bap&Gogi remove background.png">
+        </footer>
+    </div>
 </body>
 
 </html>

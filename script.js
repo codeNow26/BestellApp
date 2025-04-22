@@ -1,3 +1,7 @@
+function reloadPage() {
+    window.location.href = '/';
+}
+
 function addDishToCart(i) {
     let cartItem = document.getElementById(`cart-wrapper-${i}`);
     if (cartItem) {
@@ -24,36 +28,22 @@ function createCartItem(i) {
     showCartItem(i);
 }
 
-function generateCartItemHTML(i) {
-    return `
-        <div id="cart-wrapper-${i}" class="cart-wrapper">
-          <div class=cart-title-trash><h3 class="cart-dish-title">${myDishes[i].name}</h3>
-            <img onclick="addDishToTrash(${i})" class="trash-bin"  src="assets/icons/trash-bin.png"></div>
-            <p id="price-counter-${i}">${myDishes[i].price.toFixed(2)}€</p>
-            <div class="order-item">
-                <img onclick="changeAmount(${i}, 'minus'), addPrice(${i}, 'minus'), addPriceToTotal()" class="change-amount-btn" src="./assets/icons/minus-kreisformiger-knopf.png" alt="Minus Button">
-                <p id="amount-counter-${i}">${myDishes[i].amount}</p>
-                <img onclick="changeAmount(${i}, 'plus'), addPrice(${i}, 'plus'), addPriceToTotal()" class="change-amount-btn" src="./assets/icons/plus.png">
-                </div>
-        </div>
-    `;
-}
-
 function addCartItemToCart(html) {
     let contentRef = document.getElementById('cart');
     contentRef.innerHTML += html;
 }
 
-
 function order() {
     orderButton = document.getElementById('order-button');
     orderButtonText = document.getElementById('order-button-text');
-    let cart = document.getElementsByClassName('cart-wrapper');
-    for (let i = 0; i < cart.length; i++) {
-        addDishToTrash(i);
+    for (let i = 0; i < myDishes.length; i++) {
+        let cartItem = document.getElementById(`cart-wrapper-${i}`)
+        if (cartItem) {
+            addDishToTrash(i);
+        }
+        orderButton.style.display = "none";
+        orderButtonText.style.display = "block";
     }
-    orderButton.style.display = "none";
-    orderButtonText.style.display = "block";
 }
 
 function generateOrder() {
@@ -67,13 +57,92 @@ function generateOrder() {
     orderButtonText.style.display = 'none';
 }
 
-function DishClick(i) {
+function dishClick(i) {
     addDishToCart(i);
     generateOrder();
     addPriceToTotal();
 }
 
 function showOverlay() {
-  document.getElementById('shopping-cart').style.display = "block";
-  document.getElementById('menu-wrapper').style.display = "none";
+    let cart = document.getElementById('shopping-cart');
+    let menu = document.getElementById('menu-wrapper');
+    if (cart.style.display == 'block') {
+        cart.style.display = 'none';
+        menu.style.display = 'block';
+    } else {
+        cart.style.display = 'block';
+        menu.style.display = 'none';
+    }
+    if (window.innerWidth > 680)
+        cart.style.display = 'block';
+}
+
+
+function changeAmount(i, operation) {
+    let element = document.getElementById(`amount-counter-${i}`);
+    let cart = document.getElementById(`cart-wrapper-${i}`);
+    let amount = parseInt(element.innerText);;
+    if (operation == 'plus') {
+        element.innerText = amount + 1;
+    }
+    if (operation == 'minus') {
+        if (amount === 1) {
+            cart.style.display = "none";
+            return;
+        }
+        element.innerText = amount - 1;
+    }
+}
+
+function addPrice(i, operation) {
+    let price = document.getElementById(`price-counter-${i}`);
+    if (operation == 'plus') {
+        myDishes[i].price += myDishes[i].value;
+        myDishes[i].price = parseFloat(myDishes[i].price.toFixed(2));
+        price.innerText = myDishes[i].price.toFixed(2) + "€";
+        return;
+    }
+    if (operation == 'minus') {
+        myDishes[i].price -= myDishes[i].value
+        price.innerText = myDishes[i].price.toFixed(2) + "€";
+        return;
+    }
+}
+
+function addDishToTrash(i) {
+    let cartItem = document.getElementById(`cart-wrapper-${i}`);
+    let element = document.getElementById(`amount-counter-${i}`);
+    cartItem.style.display = 'none';
+    myDishes[i].price = 0;
+    element.innerText = 1;
+    addPriceToTotal();
+}
+
+function addPriceToTotal() {
+    let total = calculateTotal();
+    updatePriceDisplay(total);
+    addPrice();
+}
+
+function calculateTotal() {
+    let total = 0;
+    for (let i = 0; i < myDishes.length; i++) {
+        if (document.getElementById(`cart-wrapper-${i}`)) {
+            total += myDishes[i].price;
+        }
+    }
+    return Math.round(total * 100) / 100;
+}
+
+function updatePriceDisplay(total) {
+    let price = document.getElementById('total');
+    let orderButton = document.getElementById('order-button');
+    price.innerText = "Gesamt: " + total.toFixed(2) + "€";
+    if (total > 0) {
+        price.style.display = "block";
+        orderButton.style.display = "block";
+    } else {
+        price.style.display = "none";
+        orderButton.style.display = "none";
+    }
 }
